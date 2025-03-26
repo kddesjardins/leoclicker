@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clicker Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="game-container">
+    <h1>LeoClicker</h1>
+
+    <div class="counter-section">
+      <p>Points: <span id="counter">0</span></p>
+      <p>Points Per Click: <span id="pointsPerClick">1</span></p>
+      <p>Points Per Second: <span id="pointsPerSecond">0</span></p>
+      <button id="clickBtn">Click Me!</button>
+    </div>
+
+    <div class="shop-section">
+      <h2>Shop</h2>
+      <div class="upgrade" id="upgradeClick">
+        <h3>Better Clicker</h3>
+        <p>Increases points per click by 1</p>
+        <p>Cost: <span id="upgradeClickCost">10</span> points</p>
+        <button id="buyUpgradeClick">Buy</button>
+      </div>
+
+      <div class="upgrade" id="upgradeAuto">
+        <h3>Auto Clicker</h3>
+        <p>Generates 1 point per second</p>
+        <p>Cost: <span id="upgradeAutoCost">50</span> points</p>
+        <button id="buyUpgradeAuto">Buy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/game.js"></script>
+  <script src="scripts/upgrades.js"></script>
+  <script src="scripts/display.js"></script>
+</body>
+
+</html>
