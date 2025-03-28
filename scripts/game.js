@@ -12,11 +12,8 @@ function handleClick(event) {
   gameState.points += gameState.pointsPerClick;
   updateDisplay();
   
-  // Create floating mango at button position
-  const buttonRect = event.target.getBoundingClientRect();
-  const x = buttonRect.left + buttonRect.width / 2;
-  const y = buttonRect.top;
-  createFloatingMango(x, y);
+  // Pass the entire event to createFloatingMango
+  createFloatingMango(event);
 }
 
 // Auto-clicker function that runs every second
