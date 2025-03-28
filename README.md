@@ -1,5 +1,5 @@
 ## 5 minute tasks
-- Create an account on replit.com
+- Create an account on github
 - Basic Functionality Check: Verify the click button increases the counter correctly
 - Visual Feedback Test: Check if the counter updates immediately after clicking
 - Affordance Test: Verify upgrade buttons are properly disabled when points are insufficient
@@ -10,7 +10,6 @@
 ## 15 minute tasks
 - Documentation Practice: Create a simple test checklist for core functionality
 - Bug Hunting: Try to break the game while documenting your steps along the way
-- Regression Testing: Make a change to one feature, then verify all other features still work
 - Performance Check: Set up multiple auto-clickers and observe game performance over several minutes
 - UX/UI Analysis: Identify and document 3 usability improvements
 
