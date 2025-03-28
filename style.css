@@ -1,3 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.game-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #ff8c00;
+  text-align: center;
+}
+
+h2 {
+  border-bottom: 2px solid #ff8c00;
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+.counter-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#clickBtn {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#clickBtn:hover {
+  background-color: #e67e00;
+}
+
+.shop-section {
+  margin-top: 30px;
+}
+
+.upgrade {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff5e6;
+  border-radius: 5px;
+  border-left: 4px solid #ff8c00;
+}
+
+.upgrade h3 {
+  margin-top: 0;
+  color: #ff8c00;
+}
+
+.upgrade button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.upgrade button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Floating mango animation */
 .floating-mango {
   position: absolute;
   font-size: 24px;
