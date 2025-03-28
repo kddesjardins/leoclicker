@@ -13,3 +13,25 @@ function updateDisplay() {
     document.getElementById('buyUpgradeClick').disabled = gameState.points < calculateClickUpgradeCost();
     document.getElementById('buyUpgradeAuto').disabled = gameState.points < calculateAutoClickerCost();
 }
+
+// Create floating mango effect
+function createFloatingMango(x, y) {
+  const mango = document.createElement('div');
+  mango.className = 'floating-mango';
+  mango.textContent = '🥭';
+  
+  // Randomize position slightly for visual variety
+  const offsetX = (Math.random() - 0.5) * 40;
+  
+  // Position the mango near the click
+  mango.style.left = `${x + offsetX}px`;
+  mango.style.top = `${y}px`;
+  
+  // Add to the document
+  document.body.appendChild(mango);
+  
+  // Remove after animation completes
+  setTimeout(() => {
+    document.body.removeChild(mango);
+  }, 1000);
+}
