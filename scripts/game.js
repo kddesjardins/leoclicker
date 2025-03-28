@@ -9,11 +9,16 @@ let gameState = {
 
 // Main click function
 function handleClick(event) {
+  // Add points
   gameState.points += gameState.pointsPerClick;
   updateDisplay();
   
-  // Pass the entire event to createFloatingMango
-  createFloatingMango(event);
+  // Extract x and y coordinates from the event
+  const x = event.clientX;
+  const y = event.clientY;
+  
+  // Pass the coordinates to createFloatingMango
+  createFloatingMango(x, y);
 }
 
 // Auto-clicker function that runs every second
