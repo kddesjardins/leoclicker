@@ -13,24 +13,44 @@ function handleClick(event) {
   gameState.points += gameState.pointsPerClick;
   updateDisplay();
   
-  // Get the button element that was clicked
-  const button = event.currentTarget;
+  // Get the button's position
+  const buttonRect = event.currentTarget.getBoundingClientRect();
   
-  // Get the button's position information
-  const buttonRect = button.getBoundingClientRect();
+  // Use the center of the button as the starting point for the mango
+  const centerX = buttonRect.left + buttonRect.width / 2;
+  const centerY = buttonRect.top + buttonRect.height / 2;
   
-  // Calculate the center position of the button
-  const centerX = buttonRect.left + (buttonRect.width / 2);
-  const centerY = buttonRect.top + (buttonRect.height / 2);
-  
-  // Pass the button's center coordinates to createFloatingMango
+  // Create a floating mango at the button's center position
   createFloatingMango(centerX, centerY);
 }
 
 // Auto-clicker function that runs every second
 function autoClick() {
-    gameState.points += gameState.pointsPerSecond;
-    updateDisplay();
+    // Only proceed if we have auto clickers
+    if (gameState.pointsPerSecond > 0) {
+        // Add points
+        gameState.points += gameState.pointsPerSecond;
+        updateDisplay();
+        
+        // Get the click button to create mangoes from its position
+        const clickButton = document.getElementById('clickBtn');
+        const buttonRect = clickButton.getBoundingClientRect();
+        
+        // Use the center of the button as the starting point for the mango
+        const centerX = buttonRect.left + buttonRect.width / 2;
+        const centerY = buttonRect.top + buttonRect.height / 2;
+        
+        // Create a floating mango for each point per second
+        // But limit to showing max 5 mangoes at once to prevent visual overload
+        const mangosToShow = Math.min(gameState.pointsPerSecond, 5);
+        
+        for (let i = 0; i < mangosToShow; i++) {
+            // Slight delay for each mango to create a cascading effect
+            setTimeout(() => {
+                createFloatingMango(centerX, centerY);
+            }, i * 100);
+        }
+    }
 }
 
 // Initialize the game
