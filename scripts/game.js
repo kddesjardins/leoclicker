@@ -13,12 +13,18 @@ function handleClick(event) {
   gameState.points += gameState.pointsPerClick;
   updateDisplay();
   
-  // Extract x and y coordinates from the event
-  const x = event.clientX;
-  const y = event.clientY;
+  // Get the button element that was clicked
+  const button = event.currentTarget;
   
-  // Pass the coordinates to createFloatingMango
-  createFloatingMango(x, y);
+  // Get the button's position information
+  const buttonRect = button.getBoundingClientRect();
+  
+  // Calculate the center position of the button
+  const centerX = buttonRect.left + (buttonRect.width / 2);
+  const centerY = buttonRect.top + (buttonRect.height / 2);
+  
+  // Pass the button's center coordinates to createFloatingMango
+  createFloatingMango(centerX, centerY);
 }
 
 // Auto-clicker function that runs every second
