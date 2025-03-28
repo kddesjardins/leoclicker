@@ -24,8 +24,13 @@ function createFloatingMango(x, y) {
   const offsetX = (Math.random() - 0.5) * 40;
   
   // Position the mango near the click
-  mango.style.left = `${x + offsetX}px`;
-  mango.style.top = `${y}px`;
+  // We need to account for scroll position
+  const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+  const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+  
+  // Set the absolute position relative to the document, not just the viewport
+  mango.style.left = `${x + offsetX + scrollX}px`;
+  mango.style.top = `${y + scrollY}px`;
   
   // Add to the document
   document.body.appendChild(mango);
